@@ -1,0 +1,1156 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Гармония — онлайн-служба психологической помощи. Тревога, развод, самооценка, одиночество, семейные кризисы. Консультации на русском языке.">
+<meta property="og:title" content="Гармония — Психологическая служба онлайн">
+<meta property="og:description" content="Профессиональная психологическая помощь онлайн на русском языке. Развод, тревога, самооценка, семейные кризисы.">
+<title>Гармония — Психологическая служба онлайн</title>
+
+<link href="https://api.fontshare.com/v2/css?f[]=zodiak@400,500,600,700&f[]=satoshi@300,400,500,700&display=swap" rel="stylesheet">
+
+<style>
+/* === BASE TOKENS === */
+:root, [data-theme="light"] {
+  --font-display: 'Zodiak', Georgia, serif;
+  --font-body: 'Satoshi', 'Helvetica Neue', sans-serif;
+
+  --text-xs:   clamp(0.75rem,  0.7rem  + 0.25vw, 0.875rem);
+  --text-sm:   clamp(0.875rem, 0.8rem  + 0.35vw, 1rem);
+  --text-base: clamp(1rem,     0.95rem + 0.25vw, 1.125rem);
+  --text-lg:   clamp(1.125rem, 1rem    + 0.75vw, 1.5rem);
+  --text-xl:   clamp(1.5rem,   1.2rem  + 1.25vw, 2.25rem);
+  --text-2xl:  clamp(2rem,     1.2rem  + 2.5vw,  3.5rem);
+
+  --space-1:  0.25rem;
+  --space-2:  0.5rem;
+  --space-3:  0.75rem;
+  --space-4:  1rem;
+  --space-5:  1.25rem;
+  --space-6:  1.5rem;
+  --space-8:  2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+  --space-32: 8rem;
+
+  /* Sage-warm palette */
+  --color-bg:             #f5f3ee;
+  --color-surface:        #faf9f5;
+  --color-surface-2:      #ffffff;
+  --color-surface-offset: #edeae3;
+  --color-surface-dynamic: #e3e0d8;
+  --color-divider:        #d5d1c9;
+  --color-border:         #ccc8bf;
+
+  --color-text:           #2c2a24;
+  --color-text-muted:     #6b6860;
+  --color-text-faint:     #a9a69e;
+  --color-text-inverse:   #faf9f5;
+
+  --color-primary:        #5a7a6a;
+  --color-primary-hover:  #476355;
+  --color-primary-active: #354c41;
+  --color-primary-light:  #dce8e1;
+
+  --color-accent:         #c4876a;
+  --color-accent-hover:   #b0705a;
+  --color-accent-light:   #f0ddd4;
+
+  --color-error:          #a13544;
+  --color-success:        #437a22;
+
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.25rem;
+  --radius-full: 9999px;
+
+  --transition-interactive: 180ms cubic-bezier(0.16, 1, 0.3, 1);
+
+  --shadow-sm: 0 1px 2px oklch(0.3 0.02 70 / 0.06);
+  --shadow-md: 0 4px 12px oklch(0.3 0.02 70 / 0.08);
+  --shadow-lg: 0 12px 32px oklch(0.3 0.02 70 / 0.12);
+
+  --content-narrow: 640px;
+  --content-default: 960px;
+  --content-wide: 1200px;
+}
+
+[data-theme="dark"] {
+  --color-bg:             #1a1916;
+  --color-surface:        #21201d;
+  --color-surface-2:      #282724;
+  --color-surface-offset: #1e1d1a;
+  --color-surface-dynamic: #2f2e2b;
+  --color-divider:        #3a3935;
+  --color-border:         #4a4944;
+
+  --color-text:           #d4d2cd;
+  --color-text-muted:     #8d8b85;
+  --color-text-faint:     #5c5a55;
+  --color-text-inverse:   #1a1916;
+
+  --color-primary:        #7ca68e;
+  --color-primary-hover:  #6b9a7f;
+  --color-primary-active: #5a8e70;
+  --color-primary-light:  #2a3530;
+
+  --color-accent:         #d9a08a;
+  --color-accent-hover:   #c98e76;
+  --color-accent-light:   #3d302a;
+
+  --shadow-sm: 0 1px 2px oklch(0 0 0 / 0.2);
+  --shadow-md: 0 4px 12px oklch(0 0 0 / 0.3);
+  --shadow-lg: 0 12px 32px oklch(0 0 0 / 0.4);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    --color-bg:             #1a1916;
+    --color-surface:        #21201d;
+    --color-surface-2:      #282724;
+    --color-surface-offset: #1e1d1a;
+    --color-surface-dynamic: #2f2e2b;
+    --color-divider:        #3a3935;
+    --color-border:         #4a4944;
+    --color-text:           #d4d2cd;
+    --color-text-muted:     #8d8b85;
+    --color-text-faint:     #5c5a55;
+    --color-text-inverse:   #1a1916;
+    --color-primary:        #7ca68e;
+    --color-primary-hover:  #6b9a7f;
+    --color-primary-active: #5a8e70;
+    --color-primary-light:  #2a3530;
+    --color-accent:         #d9a08a;
+    --color-accent-hover:   #c98e76;
+    --color-accent-light:   #3d302a;
+    --shadow-sm: 0 1px 2px oklch(0 0 0 / 0.2);
+    --shadow-md: 0 4px 12px oklch(0 0 0 / 0.3);
+    --shadow-lg: 0 12px 32px oklch(0 0 0 / 0.4);
+  }
+}
+
+/* === BASE RESET === */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--space-16);
+}
+body {
+  min-height: 100dvh;
+  line-height: 1.6;
+  font-family: var(--font-body, sans-serif);
+  font-size: var(--text-base);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+}
+img, picture, video, canvas, svg { display: block; max-width: 100%; height: auto; }
+input, button, textarea, select { font: inherit; color: inherit; }
+h1, h2, h3, h4 { text-wrap: balance; line-height: 1.15; font-family: var(--font-display); }
+p, li, figcaption { text-wrap: pretty; max-width: 72ch; }
+::selection { background: oklch(from var(--color-primary) l c h / 0.25); color: var(--color-text); }
+:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 3px; border-radius: var(--radius-sm); }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; } }
+button { cursor: pointer; background: none; border: none; }
+a { color: var(--color-primary); text-decoration: none; transition: color var(--transition-interactive); }
+a:hover { color: var(--color-primary-hover); }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border-width: 0; }
+
+/* === LAYOUT === */
+.container { max-width: var(--content-wide); margin-inline: auto; padding-inline: var(--space-4); }
+.container--narrow { max-width: var(--content-default); }
+
+/* === HEADER === */
+.header {
+  position: sticky; top: 0; z-index: 50;
+  background: oklch(from var(--color-bg) l c h / 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  border-bottom: 1px solid oklch(from var(--color-text) l c h / 0.06);
+}
+.header--scrolled { box-shadow: var(--shadow-sm); }
+.header__inner {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: var(--space-3) var(--space-4);
+  max-width: var(--content-wide); margin-inline: auto;
+}
+.header__logo {
+  display: flex; align-items: center; gap: var(--space-2);
+  font-family: var(--font-display); font-weight: 600;
+  font-size: var(--text-lg); color: var(--color-text);
+}
+.header__logo svg { flex-shrink: 0; }
+.header__nav { display: flex; align-items: center; gap: var(--space-6); }
+.header__nav a {
+  font-size: var(--text-sm); font-weight: 500; color: var(--color-text-muted);
+  transition: color var(--transition-interactive);
+}
+.header__nav a:hover { color: var(--color-text); }
+.header__actions { display: flex; align-items: center; gap: var(--space-3); }
+.theme-toggle {
+  width: 40px; height: 40px; border-radius: var(--radius-full);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--color-text-muted);
+  transition: color var(--transition-interactive), background var(--transition-interactive);
+}
+.theme-toggle:hover { color: var(--color-text); background: var(--color-surface-offset); }
+
+/* Mobile menu */
+.mobile-menu-btn {
+  display: none; width: 40px; height: 40px;
+  align-items: center; justify-content: center;
+  border-radius: var(--radius-full); color: var(--color-text);
+}
+@media (max-width: 768px) {
+  .header__nav { display: none; }
+  .mobile-menu-btn { display: flex; }
+  .mobile-nav {
+    display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+    background: var(--color-bg); z-index: 100;
+    flex-direction: column; align-items: center; justify-content: center; gap: var(--space-6);
+  }
+  .mobile-nav.open { display: flex; }
+  .mobile-nav a {
+    font-size: var(--text-xl); font-family: var(--font-display);
+    font-weight: 500; color: var(--color-text);
+  }
+  .mobile-nav__close {
+    position: absolute; top: var(--space-4); right: var(--space-4);
+    width: 44px; height: 44px; display: flex; align-items: center; justify-content: center;
+    color: var(--color-text); border-radius: var(--radius-full);
+  }
+}
+
+/* === BUTTONS === */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: var(--space-2);
+  padding: var(--space-3) var(--space-6);
+  font-size: var(--text-sm); font-weight: 500;
+  border-radius: var(--radius-lg);
+  transition: background var(--transition-interactive), color var(--transition-interactive),
+              box-shadow var(--transition-interactive), transform var(--transition-interactive);
+  white-space: nowrap;
+}
+.btn:hover { transform: translateY(-1px); }
+.btn:active { transform: translateY(0); }
+.btn--primary {
+  background: var(--color-primary); color: var(--color-text-inverse);
+}
+.btn--primary:hover { background: var(--color-primary-hover); box-shadow: var(--shadow-md); color: var(--color-text-inverse); }
+.btn--accent {
+  background: var(--color-accent); color: #fff;
+}
+.btn--accent:hover { background: var(--color-accent-hover); box-shadow: var(--shadow-md); color: #fff; }
+.btn--ghost {
+  background: transparent; color: var(--color-text);
+  border: 1px solid oklch(from var(--color-text) l c h / 0.15);
+}
+.btn--ghost:hover { background: var(--color-surface-offset); border-color: oklch(from var(--color-text) l c h / 0.25); }
+.btn--lg { padding: var(--space-4) var(--space-8); font-size: var(--text-base); }
+
+/* === HERO === */
+.hero {
+  position: relative; overflow: hidden;
+  padding: clamp(var(--space-16), 10vw, var(--space-32)) var(--space-4);
+  min-height: 80vh; display: flex; align-items: center;
+}
+.hero__bg {
+  position: absolute; inset: 0; z-index: 0;
+  background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-bg) 50%, var(--color-accent-light) 100%);
+}
+.hero__bg img {
+  width: 100%; height: 100%; object-fit: cover; opacity: 0.15;
+  mix-blend-mode: multiply;
+}
+.hero__content {
+  position: relative; z-index: 1;
+  max-width: var(--content-default); margin-inline: auto; text-align: center;
+}
+.hero__badge {
+  display: inline-flex; align-items: center; gap: var(--space-2);
+  padding: var(--space-1) var(--space-3);
+  background: oklch(from var(--color-primary) l c h / 0.1);
+  border-radius: var(--radius-full);
+  font-size: var(--text-xs); font-weight: 500; color: var(--color-primary);
+  margin-bottom: var(--space-6);
+}
+.hero__title {
+  font-size: var(--text-2xl); font-weight: 600;
+  margin-bottom: var(--space-6); color: var(--color-text);
+  line-height: 1.1;
+}
+.hero__subtitle {
+  font-size: var(--text-lg); color: var(--color-text-muted);
+  max-width: 52ch; margin-inline: auto; margin-bottom: var(--space-8);
+  line-height: 1.5;
+}
+.hero__actions { display: flex; gap: var(--space-3); justify-content: center; flex-wrap: wrap; }
+
+/* === STATS BAR === */
+.stats {
+  background: var(--color-surface);
+  border-top: 1px solid var(--color-divider);
+  border-bottom: 1px solid var(--color-divider);
+  padding: var(--space-8) var(--space-4);
+}
+.stats__grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-4);
+  max-width: var(--content-wide); margin-inline: auto; text-align: center;
+}
+.stats__item {}
+.stats__number {
+  font-family: var(--font-display); font-size: var(--text-xl); font-weight: 600;
+  color: var(--color-primary); margin-bottom: var(--space-1);
+}
+.stats__label { font-size: var(--text-xs); color: var(--color-text-muted); }
+@media (max-width: 640px) { .stats__grid { grid-template-columns: repeat(2, 1fr); } }
+
+/* === PROBLEMS SECTION === */
+.problems { padding: clamp(var(--space-12), 8vw, var(--space-24)) var(--space-4); }
+.section-header {
+  text-align: center; margin-bottom: clamp(var(--space-8), 4vw, var(--space-16));
+}
+.section-header__tag {
+  font-size: var(--text-xs); font-weight: 500; text-transform: uppercase;
+  letter-spacing: 0.08em; color: var(--color-primary); margin-bottom: var(--space-3);
+}
+.section-header__title {
+  font-size: var(--text-xl); font-weight: 600; margin-bottom: var(--space-3);
+}
+.section-header__desc {
+  font-size: var(--text-base); color: var(--color-text-muted);
+  max-width: 56ch; margin-inline: auto;
+}
+
+.problems__grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-4);
+  max-width: var(--content-wide); margin-inline: auto;
+}
+@media (max-width: 900px) { .problems__grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .problems__grid { grid-template-columns: 1fr; } }
+
+.problem-card {
+  background: var(--color-surface);
+  border: 1px solid oklch(from var(--color-text) l c h / 0.08);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+  transition: box-shadow var(--transition-interactive), transform var(--transition-interactive);
+  cursor: pointer;
+}
+.problem-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+.problem-card:active { transform: translateY(0); }
+.problem-card__icon {
+  width: 48px; height: 48px; border-radius: var(--radius-lg);
+  background: var(--color-primary-light);
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: var(--space-4); font-size: 1.5rem;
+  color: var(--color-primary);
+}
+.problem-card__title {
+  font-family: var(--font-display); font-size: var(--text-lg);
+  font-weight: 600; margin-bottom: var(--space-2);
+}
+.problem-card__desc {
+  font-size: var(--text-sm); color: var(--color-text-muted);
+  line-height: 1.55;
+}
+.problem-card__stats {
+  margin-top: var(--space-3); padding-top: var(--space-3);
+  border-top: 1px solid var(--color-divider);
+  font-size: var(--text-xs); color: var(--color-text-faint);
+}
+
+/* === FEATURED PROBLEM — Divorce === */
+.featured {
+  padding: clamp(var(--space-12), 8vw, var(--space-24)) var(--space-4);
+  background: var(--color-surface-offset);
+}
+.featured__inner {
+  max-width: var(--content-wide); margin-inline: auto;
+  display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-10); align-items: center;
+}
+.featured__image { border-radius: var(--radius-xl); overflow: hidden; }
+.featured__image img { width: 100%; height: auto; aspect-ratio: 4/3; object-fit: cover; }
+.featured__content {}
+.featured__tag {
+  font-size: var(--text-xs); font-weight: 500; text-transform: uppercase;
+  letter-spacing: 0.08em; color: var(--color-accent); margin-bottom: var(--space-3);
+}
+.featured__title {
+  font-size: var(--text-xl); font-weight: 600; margin-bottom: var(--space-4);
+}
+.featured__text {
+  font-size: var(--text-base); color: var(--color-text-muted);
+  margin-bottom: var(--space-6); line-height: 1.6;
+}
+.featured__list { list-style: none; margin-bottom: var(--space-6); }
+.featured__list li {
+  display: flex; align-items: flex-start; gap: var(--space-3);
+  padding: var(--space-2) 0; font-size: var(--text-sm); color: var(--color-text);
+}
+.featured__list li svg { flex-shrink: 0; margin-top: 2px; color: var(--color-primary); }
+@media (max-width: 768px) {
+  .featured__inner { grid-template-columns: 1fr; }
+  .featured__image { order: -1; }
+}
+
+/* === HOW IT WORKS === */
+.how {
+  padding: clamp(var(--space-12), 8vw, var(--space-24)) var(--space-4);
+}
+.how__grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-6);
+  max-width: var(--content-wide); margin-inline: auto;
+}
+@media (max-width: 900px) { .how__grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .how__grid { grid-template-columns: 1fr; } }
+.step {
+  text-align: center; padding: var(--space-6);
+}
+.step__number {
+  font-family: var(--font-display); font-size: var(--text-2xl);
+  font-weight: 300; color: var(--color-primary-light); margin-bottom: var(--space-3);
+}
+[data-theme="dark"] .step__number { color: var(--color-primary); opacity: 0.3; }
+.step__title {
+  font-family: var(--font-display); font-size: var(--text-lg);
+  font-weight: 600; margin-bottom: var(--space-2);
+}
+.step__desc { font-size: var(--text-sm); color: var(--color-text-muted); }
+
+/* === GALLERY (second featured: Family + Self) === */
+.gallery {
+  padding: clamp(var(--space-12), 8vw, var(--space-24)) var(--space-4);
+}
+.gallery__grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-6);
+  max-width: var(--content-wide); margin-inline: auto;
+}
+@media (max-width: 768px) { .gallery__grid { grid-template-columns: 1fr; } }
+.gallery-card {
+  background: var(--color-surface); border-radius: var(--radius-xl); overflow: hidden;
+  border: 1px solid oklch(from var(--color-text) l c h / 0.08);
+  transition: box-shadow var(--transition-interactive), transform var(--transition-interactive);
+}
+.gallery-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-2px); }
+.gallery-card:active { transform: translateY(0); }
+.gallery-card__img { aspect-ratio: 16/9; overflow: hidden; }
+.gallery-card__img img { width: 100%; height: 100%; object-fit: cover; }
+.gallery-card__body { padding: var(--space-5) var(--space-6); }
+.gallery-card__title {
+  font-family: var(--font-display); font-size: var(--text-lg);
+  font-weight: 600; margin-bottom: var(--space-2);
+}
+.gallery-card__desc { font-size: var(--text-sm); color: var(--color-text-muted); margin-bottom: var(--space-4); }
+
+/* === TESTIMONIALS === */
+.testimonials {
+  padding: clamp(var(--space-12), 8vw, var(--space-24)) var(--space-4);
+  background: var(--color-surface-offset);
+}
+.testimonials__grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-6);
+  max-width: var(--content-wide); margin-inline: auto;
+}
+@media (max-width: 900px) { .testimonials__grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .testimonials__grid { grid-template-columns: 1fr; } }
+.testimonial {
+  background: var(--color-surface-2); border-radius: var(--radius-xl);
+  padding: var(--space-6);
+  border: 1px solid oklch(from var(--color-text) l c h / 0.06);
+}
+.testimonial__text {
+  font-size: var(--text-sm); color: var(--color-text); margin-bottom: var(--space-4);
+  line-height: 1.6; font-style: italic;
+}
+.testimonial__author {
+  display: flex; align-items: center; gap: var(--space-3);
+}
+.testimonial__avatar {
+  width: 40px; height: 40px; border-radius: var(--radius-full);
+  background: var(--color-primary-light); display: flex;
+  align-items: center; justify-content: center;
+  font-family: var(--font-display); font-weight: 600;
+  font-size: var(--text-sm); color: var(--color-primary);
+}
+.testimonial__name { font-size: var(--text-sm); font-weight: 500; }
+.testimonial__detail { font-size: var(--text-xs); color: var(--color-text-muted); }
+
+/* === PRICING === */
+.pricing {
+  padding: clamp(var(--space-12), 8vw, var(--space-24)) var(--space-4);
+}
+.pricing__grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-6);
+  max-width: var(--content-wide); margin-inline: auto;
+}
+@media (max-width: 900px) { .pricing__grid { grid-template-columns: 1fr; } }
+.price-card {
+  background: var(--color-surface); border-radius: var(--radius-xl);
+  padding: var(--space-8); text-align: center;
+  border: 1px solid oklch(from var(--color-text) l c h / 0.08);
+  position: relative;
+}
+.price-card--featured {
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-md);
+}
+.price-card__badge {
+  position: absolute; top: calc(-1 * var(--space-3)); left: 50%; transform: translateX(-50%);
+  background: var(--color-primary); color: var(--color-text-inverse);
+  padding: var(--space-1) var(--space-4); border-radius: var(--radius-full);
+  font-size: var(--text-xs); font-weight: 500;
+}
+.price-card__name {
+  font-family: var(--font-display); font-size: var(--text-lg);
+  font-weight: 600; margin-bottom: var(--space-2);
+}
+.price-card__desc {
+  font-size: var(--text-sm); color: var(--color-text-muted); margin-bottom: var(--space-4);
+}
+.price-card__price {
+  font-family: var(--font-display); font-size: var(--text-xl);
+  font-weight: 700; margin-bottom: var(--space-1);
+}
+.price-card__unit { font-size: var(--text-xs); color: var(--color-text-muted); margin-bottom: var(--space-6); }
+.price-card__features { list-style: none; text-align: left; margin-bottom: var(--space-6); }
+.price-card__features li {
+  display: flex; align-items: flex-start; gap: var(--space-2);
+  padding: var(--space-2) 0; font-size: var(--text-sm); color: var(--color-text);
+}
+.price-card__features li svg { flex-shrink: 0; margin-top: 2px; color: var(--color-primary); }
+
+/* === CTA BANNER === */
+.cta-banner {
+  padding: clamp(var(--space-12), 8vw, var(--space-20)) var(--space-4);
+  background: var(--color-primary); color: var(--color-text-inverse); text-align: center;
+}
+.cta-banner__title {
+  font-family: var(--font-display); font-size: var(--text-xl);
+  font-weight: 600; margin-bottom: var(--space-3);
+  color: var(--color-text-inverse);
+}
+.cta-banner__desc {
+  font-size: var(--text-base); opacity: 0.85;
+  max-width: 48ch; margin-inline: auto; margin-bottom: var(--space-6);
+}
+.cta-banner .btn--accent { background: #fff; color: var(--color-primary); }
+.cta-banner .btn--accent:hover { background: #f0f0f0; color: var(--color-primary-hover); }
+
+/* === FAQ === */
+.faq {
+  padding: clamp(var(--space-12), 8vw, var(--space-24)) var(--space-4);
+}
+.faq__list {
+  max-width: var(--content-narrow); margin-inline: auto;
+}
+.faq__item {
+  border-bottom: 1px solid var(--color-divider);
+}
+.faq__question {
+  width: 100%; text-align: left; padding: var(--space-5) 0;
+  font-size: var(--text-base); font-weight: 500; color: var(--color-text);
+  display: flex; justify-content: space-between; align-items: center; gap: var(--space-4);
+  min-height: 44px;
+}
+.faq__question svg {
+  flex-shrink: 0; transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  color: var(--color-text-muted);
+}
+.faq__item.open .faq__question svg { transform: rotate(180deg); }
+.faq__answer {
+  max-height: 0; overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              padding 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.faq__item.open .faq__answer { max-height: 500px; padding-bottom: var(--space-5); }
+.faq__answer p { font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.6; }
+
+/* === FOOTER === */
+.footer {
+  padding: var(--space-12) var(--space-4) var(--space-6);
+  background: var(--color-surface);
+  border-top: 1px solid var(--color-divider);
+}
+.footer__inner {
+  display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: var(--space-8);
+  max-width: var(--content-wide); margin-inline: auto;
+  margin-bottom: var(--space-8);
+}
+@media (max-width: 768px) { .footer__inner { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 480px) { .footer__inner { grid-template-columns: 1fr; } }
+.footer__brand {
+  display: flex; flex-direction: column; gap: var(--space-3);
+}
+.footer__brand-name {
+  font-family: var(--font-display); font-size: var(--text-lg); font-weight: 600;
+  display: flex; align-items: center; gap: var(--space-2);
+}
+.footer__brand-desc { font-size: var(--text-sm); color: var(--color-text-muted); max-width: 32ch; }
+.footer__col-title {
+  font-size: var(--text-sm); font-weight: 600; margin-bottom: var(--space-3);
+}
+.footer__links { list-style: none; }
+.footer__links li { margin-bottom: var(--space-2); }
+.footer__links a { font-size: var(--text-sm); color: var(--color-text-muted); }
+.footer__links a:hover { color: var(--color-text); }
+.footer__bottom {
+  max-width: var(--content-wide); margin-inline: auto;
+  padding-top: var(--space-6); border-top: 1px solid var(--color-divider);
+  display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: var(--space-3);
+  font-size: var(--text-xs); color: var(--color-text-faint);
+}
+
+/* === SCROLL REVEAL === */
+.fade-in { opacity: 1; }
+@supports (animation-timeline: scroll()) {
+  .fade-in {
+    opacity: 0;
+    animation: reveal-fade linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 100%;
+  }
+}
+@keyframes reveal-fade { to { opacity: 1; } }
+</style>
+</head>
+
+<body>
+<!-- SKIP LINK -->
+<a href="#main" class="sr-only" style="position:fixed;top:var(--space-2);left:var(--space-2);z-index:200;background:var(--color-primary);color:var(--color-text-inverse);padding:var(--space-2) var(--space-4);border-radius:var(--radius-md);">Перейти к содержимому</a>
+
+<!-- HEADER -->
+<header class="header" role="banner">
+  <div class="header__inner">
+    <a href="#" class="header__logo" aria-label="Гармония — на главную">
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+        <circle cx="16" cy="16" r="14" stroke="currentColor" stroke-width="1.5"/>
+        <path d="M11 20c2-4 4-8 5-8s3 8 5 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+        <circle cx="16" cy="10" r="2" fill="currentColor"/>
+      </svg>
+      Гармония
+    </a>
+    <nav class="header__nav" aria-label="Основная навигация">
+      <a href="#problems">Проблемы</a>
+      <a href="#how">Как это работает</a>
+      <a href="#pricing">Стоимость</a>
+      <a href="#faq">Вопросы</a>
+    </nav>
+    <div class="header__actions">
+      <button class="theme-toggle" data-theme-toggle aria-label="Переключить тему">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+      <a href="#cta" class="btn btn--primary" style="display:none;">Записаться</a>
+      <button class="mobile-menu-btn" aria-label="Открыть меню" onclick="document.querySelector('.mobile-nav').classList.add('open')">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav" role="dialog" aria-label="Мобильное меню">
+  <button class="mobile-nav__close" aria-label="Закрыть меню" onclick="document.querySelector('.mobile-nav').classList.remove('open')">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+  </button>
+  <a href="#problems" onclick="document.querySelector('.mobile-nav').classList.remove('open')">Проблемы</a>
+  <a href="#how" onclick="document.querySelector('.mobile-nav').classList.remove('open')">Как это работает</a>
+  <a href="#pricing" onclick="document.querySelector('.mobile-nav').classList.remove('open')">Стоимость</a>
+  <a href="#faq" onclick="document.querySelector('.mobile-nav').classList.remove('open')">Вопросы</a>
+  <a href="#cta" class="btn btn--primary" onclick="document.querySelector('.mobile-nav').classList.remove('open')">Записаться</a>
+</div>
+
+<main id="main">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero__bg">
+    <img src="https://user-gen-media-assets.s3.amazonaws.com/seedream_images/df30202e-cf29-464d-b0f0-3c452f086ae4.png" alt="" width="1200" height="1200" loading="eager" decoding="async">
+  </div>
+  <div class="hero__content">
+    <div class="hero__badge">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+      Онлайн-консультации на русском языке
+    </div>
+    <h1 class="hero__title">Ваш путь к внутренней гармонии начинается здесь</h1>
+    <p class="hero__subtitle">Профессиональная психологическая помощь при тревоге, разводе, кризисах самооценки и семейных трудностях — конфиденциально, онлайн, в удобное время.</p>
+    <div class="hero__actions">
+      <a href="#cta" class="btn btn--primary btn--lg">Записаться на консультацию</a>
+      <a href="#problems" class="btn btn--ghost btn--lg">Узнать о проблемах</a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats" aria-label="Статистика">
+  <div class="stats__grid">
+    <div class="stats__item fade-in">
+      <div class="stats__number">19,6 млн</div>
+      <div class="stats__label">россиян обращались к психологу в 2024</div>
+    </div>
+    <div class="stats__item fade-in">
+      <div class="stats__number">8 из 10</div>
+      <div class="stats__label">браков в России заканчиваются разводом</div>
+    </div>
+    <div class="stats__item fade-in">
+      <div class="stats__number">28%</div>
+      <div class="stats__label">обращений связаны с эмоциональными проблемами</div>
+    </div>
+    <div class="stats__item fade-in">
+      <div class="stats__number">11%</div>
+      <div class="stats__label">клиентов приходят из-за тревожности</div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEMS GRID -->
+<section class="problems" id="problems">
+  <div class="section-header fade-in">
+    <div class="section-header__tag">С чем мы работаем</div>
+    <h2 class="section-header__title">Актуальные запросы россиян к психологу</h2>
+    <p class="section-header__desc">По данным аналитики крупнейших платформ психотерапии за 2024–2025 годы</p>
+  </div>
+
+  <div class="problems__grid">
+    <div class="problem-card fade-in">
+      <div class="problem-card__icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+      </div>
+      <h3 class="problem-card__title">Развод и расставание</h3>
+      <p class="problem-card__desc">Переживание развода, принятие решения о расставании, восстановление после разрыва, сохранение отношений с детьми.</p>
+      <div class="problem-card__stats">8 из 10 браков распадаются — 3-е место в мире</div>
+    </div>
+
+    <div class="problem-card fade-in">
+      <div class="problem-card__icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 15s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01"/></svg>
+      </div>
+      <h3 class="problem-card__title">Тревога и панические атаки</h3>
+      <p class="problem-card__desc">Хроническая тревожность, панические атаки, навязчивые мысли, постоянное внутреннее напряжение и беспокойство.</p>
+      <div class="problem-card__stats">11% всех обращений — топ-3 запрос</div>
+    </div>
+
+    <div class="problem-card fade-in">
+      <div class="problem-card__icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+      </div>
+      <h3 class="problem-card__title">Самооценка и уверенность</h3>
+      <p class="problem-card__desc">Низкая самооценка, неуверенность, синдром самозванца, трудности с границами и внутренней опорой.</p>
+      <div class="problem-card__stats">Самый частый запрос у 18–45 лет</div>
+    </div>
+
+    <div class="problem-card fade-in">
+      <div class="problem-card__icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      </div>
+      <h3 class="problem-card__title">Семейные конфликты</h3>
+      <p class="problem-card__desc">Разногласия с партнёром, измены, ревность, созависимость, токсичные отношения с родителями.</p>
+      <div class="problem-card__stats">16% обращений — отношения и семья</div>
+    </div>
+
+    <div class="problem-card fade-in">
+      <div class="problem-card__icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+      </div>
+      <h3 class="problem-card__title">Одиночество</h3>
+      <p class="problem-card__desc">Чувство изоляции, трудности в построении близких отношений, страх близости, социальная тревожность.</p>
+      <div class="problem-card__stats">9% запросов — третий по частоте</div>
+    </div>
+
+    <div class="problem-card fade-in">
+      <div class="problem-card__icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+      </div>
+      <h3 class="problem-card__title">Стресс и выгорание</h3>
+      <p class="problem-card__desc">Эмоциональное истощение, раздражительность, агрессия, профессиональное выгорание, потеря мотивации.</p>
+      <div class="problem-card__stats">13% начинают терапию из-за стресса</div>
+    </div>
+
+    <div class="problem-card fade-in">
+      <div class="problem-card__icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </div>
+      <h3 class="problem-card__title">Депрессия</h3>
+      <p class="problem-card__desc">Подавленное настроение, апатия, потеря интереса к жизни, нарушения сна, суицидальные мысли.</p>
+      <div class="problem-card__stats">31% обращавшихся к специалисту</div>
+    </div>
+
+    <div class="problem-card fade-in">
+      <div class="problem-card__icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+      </div>
+      <h3 class="problem-card__title">Проблемы с детьми</h3>
+      <p class="problem-card__desc">Поведение ребёнка, истерики, тревожность у детей, СДВГ, трудности в учёбе, отношения родитель-ребёнок.</p>
+      <div class="problem-card__stats">Самый частый запрос у родителей</div>
+    </div>
+
+    <div class="problem-card fade-in">
+      <div class="problem-card__icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+      </div>
+      <h3 class="problem-card__title">Жизненные кризисы</h3>
+      <p class="problem-card__desc">Потеря близких, горевание, кризис среднего возраста, переезд, смена работы, потеря смысла жизни.</p>
+      <div class="problem-card__stats">Рост обращений после 35 лет</div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED: DIVORCE -->
+<section class="featured" id="divorce">
+  <div class="featured__inner fade-in">
+    <div class="featured__image">
+      <img src="https://user-gen-media-assets.s3.amazonaws.com/seedream_images/3a5509be-ab43-4635-9caa-41471f12e060.png" alt="Парная терапия — два человека беседуют в уютной обстановке" width="600" height="450" loading="lazy">
+    </div>
+    <div class="featured__content">
+      <div class="featured__tag">Главная проблема</div>
+      <h2 class="featured__title">Развод: как пережить и начать заново</h2>
+      <p class="featured__text">Россия — на третьем месте в мире по числу разводов. В 2024 году зарегистрировано 880 тысяч расторжений. 42% россиян сталкивались с изменой партнёра. Мы помогаем на каждом этапе — от принятия решения до восстановления.</p>
+      <ul class="featured__list" role="list">
+        <li>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+          Эмоциональная поддержка в острой фазе расставания
+        </li>
+        <li>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+          Помощь в переговорах с бывшим партнёром
+        </li>
+        <li>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+          Защита детей от последствий конфликта
+        </li>
+        <li>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+          Восстановление самооценки и доверия после измены
+        </li>
+      </ul>
+      <a href="#cta" class="btn btn--primary">Записаться на консультацию</a>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY: Family + Individual -->
+<section class="gallery">
+  <div class="section-header fade-in">
+    <div class="section-header__tag">Форматы работы</div>
+    <h2 class="section-header__title">Индивидуальная и семейная терапия</h2>
+  </div>
+  <div class="gallery__grid">
+    <div class="gallery-card fade-in">
+      <div class="gallery-card__img">
+        <img src="https://user-gen-media-assets.s3.amazonaws.com/seedream_images/0b1fe73c-77b7-4a6a-9a2e-8a18ca6bfb85.png" alt="Индивидуальная терапия — человек в спокойной обстановке" width="600" height="338" loading="lazy">
+      </div>
+      <div class="gallery-card__body">
+        <h3 class="gallery-card__title">Индивидуальная терапия</h3>
+        <p class="gallery-card__desc">Работа с личными переживаниями, тревогой, самооценкой, депрессией и жизненными кризисами в формате личной консультации с психологом.</p>
+        <a href="#cta" class="btn btn--ghost">Подробнее</a>
+      </div>
+    </div>
+    <div class="gallery-card fade-in">
+      <div class="gallery-card__img">
+        <img src="https://user-gen-media-assets.s3.amazonaws.com/seedream_images/817428ab-b18d-42ec-8d35-95f8f26afbc2.png" alt="Семейная терапия — родитель и ребёнок вместе" width="600" height="338" loading="lazy">
+      </div>
+      <div class="gallery-card__body">
+        <h3 class="gallery-card__title">Семейная и парная терапия</h3>
+        <p class="gallery-card__desc">Совместные сессии для пар и семей: конфликты, измены, воспитание детей, улучшение коммуникации и восстановление близости.</p>
+        <a href="#cta" class="btn btn--ghost">Подробнее</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how" id="how">
+  <div class="section-header fade-in">
+    <div class="section-header__tag">Как начать</div>
+    <h2 class="section-header__title">Четыре простых шага</h2>
+  </div>
+  <div class="how__grid">
+    <div class="step fade-in">
+      <div class="step__number">01</div>
+      <h3 class="step__title">Опишите запрос</h3>
+      <p class="step__desc">Расскажите, что вас беспокоит — анонимно, без обязательств.</p>
+    </div>
+    <div class="step fade-in">
+      <div class="step__number">02</div>
+      <h3 class="step__title">Подбор специалиста</h3>
+      <p class="step__desc">Алгоритм подберёт психолога с опытом работы именно с вашей проблемой.</p>
+    </div>
+    <div class="step fade-in">
+      <div class="step__number">03</div>
+      <h3 class="step__title">Первая сессия</h3>
+      <p class="step__desc">Видеоконсультация из дома — 50 минут, в удобное для вас время.</p>
+    </div>
+    <div class="step fade-in">
+      <div class="step__number">04</div>
+      <h3 class="step__title">Путь к результату</h3>
+      <p class="step__desc">Регулярные сессии, поддержка между встречами, ощутимые изменения.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <div class="section-header fade-in">
+    <div class="section-header__tag">Отзывы</div>
+    <h2 class="section-header__title">Истории наших клиентов</h2>
+  </div>
+  <div class="testimonials__grid">
+    <div class="testimonial fade-in">
+      <p class="testimonial__text">«После развода я чувствовала, что мир рухнул. Через полгода терапии я заново обрела себя и наладила отношения с детьми. Спасибо за безопасное пространство.»</p>
+      <div class="testimonial__author">
+        <div class="testimonial__avatar">А</div>
+        <div>
+          <div class="testimonial__name">Анна, 34 года</div>
+          <div class="testimonial__detail">Работала с проблемой развода</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial fade-in">
+      <p class="testimonial__text">«Панические атаки не давали нормально жить. После 3 месяцев с психологом я понял корни тревоги и научился справляться. Теперь живу без страха.»</p>
+      <div class="testimonial__author">
+        <div class="testimonial__avatar">Д</div>
+        <div>
+          <div class="testimonial__name">Дмитрий, 28 лет</div>
+          <div class="testimonial__detail">Работал с тревогой и паническими атаками</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial fade-in">
+      <p class="testimonial__text">«Мы с мужем были на грани. Парная терапия помогла услышать друг друга. Сейчас мы ближе, чем когда-либо. Жалею, что не пришли раньше.»</p>
+      <div class="testimonial__author">
+        <div class="testimonial__avatar">М</div>
+        <div>
+          <div class="testimonial__name">Мария, 41 год</div>
+          <div class="testimonial__detail">Семейная терапия</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing" id="pricing">
+  <div class="section-header fade-in">
+    <div class="section-header__tag">Стоимость</div>
+    <h2 class="section-header__title">Прозрачные и доступные цены</h2>
+    <p class="section-header__desc">Все форматы — онлайн, 50 минут, с проверенным специалистом</p>
+  </div>
+  <div class="pricing__grid">
+    <div class="price-card fade-in">
+      <h3 class="price-card__name">Разовая сессия</h3>
+      <p class="price-card__desc">Попробовать и понять, подходит ли формат</p>
+      <div class="price-card__price">3 500 ₽</div>
+      <div class="price-card__unit">за одну сессию</div>
+      <ul class="price-card__features" role="list">
+        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg> 50-минутная видеоконсультация</li>
+        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg> Подбор специалиста под запрос</li>
+        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg> Полная конфиденциальность</li>
+      </ul>
+      <a href="#cta" class="btn btn--ghost" style="width:100%;">Записаться</a>
+    </div>
+
+    <div class="price-card price-card--featured fade-in">
+      <div class="price-card__badge">Популярный выбор</div>
+      <h3 class="price-card__name">Пакет 4 сессии</h3>
+      <p class="price-card__desc">Для стабильной работы и первых результатов</p>
+      <div class="price-card__price">12 000 ₽</div>
+      <div class="price-card__unit">3 000 ₽ за сессию · экономия 14%</div>
+      <ul class="price-card__features" role="list">
+        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg> Всё из разовой сессии</li>
+        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg> Еженедельные сессии</li>
+        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg> Чат-поддержка между сессиями</li>
+        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg> Индивидуальный план терапии</li>
+      </ul>
+      <a href="#cta" class="btn btn--primary" style="width:100%;">Записаться</a>
+    </div>
+
+    <div class="price-card fade-in">
+      <h3 class="price-card__name">Парная/семейная</h3>
+      <p class="price-card__desc">Для пар и семей, работающих вместе</p>
+      <div class="price-card__price">5 000 ₽</div>
+      <div class="price-card__unit">за совместную сессию</div>
+      <ul class="price-card__features" role="list">
+        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg> 60-минутная совместная сессия</li>
+        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg> Специалист по семейной терапии</li>
+        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg> Работа с обоими партнёрами</li>
+      </ul>
+      <a href="#cta" class="btn btn--ghost" style="width:100%;">Записаться</a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-banner" id="cta">
+  <h2 class="cta-banner__title">Первый шаг — самый важный</h2>
+  <p class="cta-banner__desc">Запишитесь на бесплатную 15-минутную консультацию. Мы подберём специалиста и обсудим ваш запрос — без обязательств.</p>
+  <a href="mailto:hello@garmonia-psy.ru" class="btn btn--accent btn--lg" target="_blank" rel="noopener noreferrer">Записаться бесплатно</a>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="section-header fade-in">
+    <div class="section-header__tag">Частые вопросы</div>
+    <h2 class="section-header__title">Ответы на ваши вопросы</h2>
+  </div>
+  <div class="faq__list">
+    <div class="faq__item">
+      <button class="faq__question" aria-expanded="false">
+        Как проходит онлайн-консультация?
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="faq__answer">
+        <p>Консультация проходит по защищённому видеочату в вашем личном кабинете. Вам понадобятся только устройство с камерой и стабильный интернет. Сессия длится 50 минут, вы можете находиться в любом удобном месте.</p>
+      </div>
+    </div>
+    <div class="faq__item">
+      <button class="faq__question" aria-expanded="false">
+        Это полностью конфиденциально?
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="faq__answer">
+        <p>Абсолютно. Все данные шифруются, записи сессий не ведутся. Вы можете использовать псевдоним при регистрации. Психологи связаны профессиональной этикой и не разглашают информацию о клиентах.</p>
+      </div>
+    </div>
+    <div class="faq__item">
+      <button class="faq__question" aria-expanded="false">
+        Как подбирается психолог?
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="faq__answer">
+        <p>Мы используем умный алгоритм подбора: вы описываете проблему, выбираете предпочтения по полу, возрасту и подходу специалиста. Система предложит 2-3 подходящих психолога, и вы выберете того, кто ближе.</p>
+      </div>
+    </div>
+    <div class="faq__item">
+      <button class="faq__question" aria-expanded="false">
+        Онлайн-терапия так же эффективна, как очная?
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="faq__answer">
+        <p>Да. Многочисленные исследования подтверждают, что онлайн-терапия столь же эффективна, как очные сессии, особенно при работе с тревогой, депрессией и отношениями. Домашняя обстановка часто помогает клиентам быстрее раскрыться.</p>
+      </div>
+    </div>
+    <div class="faq__item">
+      <button class="faq__question" aria-expanded="false">
+        Можно ли поменять психолога?
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="faq__answer">
+        <p>Конечно. Если вы чувствуете, что контакт со специалистом не складывается — это абсолютно нормально. Вы можете бесплатно сменить психолога в любой момент, и мы поможем с подбором нового.</p>
+      </div>
+    </div>
+    <div class="faq__item">
+      <button class="faq__question" aria-expanded="false">
+        Что делать в экстренной ситуации?
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="faq__answer">
+        <p>Если вам или кому-то рядом угрожает опасность, позвоните по телефону экстренной психологической помощи: 8-800-2000-122 (бесплатно, круглосуточно). Наш сервис — это плановая терапия, а не кризисная служба.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer" role="contentinfo">
+  <div class="footer__inner">
+    <div class="footer__brand">
+      <div class="footer__brand-name">
+        <svg width="24" height="24" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+          <circle cx="16" cy="16" r="14" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M11 20c2-4 4-8 5-8s3 8 5 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+          <circle cx="16" cy="10" r="2" fill="currentColor"/>
+        </svg>
+        Гармония
+      </div>
+      <p class="footer__brand-desc">Онлайн-служба психологической помощи на русском языке. Конфиденциально. Профессионально. Доступно.</p>
+    </div>
+    <div>
+      <h4 class="footer__col-title">Проблемы</h4>
+      <ul class="footer__links" role="list">
+        <li><a href="#problems">Развод</a></li>
+        <li><a href="#problems">Тревога</a></li>
+        <li><a href="#problems">Самооценка</a></li>
+        <li><a href="#problems">Депрессия</a></li>
+        <li><a href="#problems">Одиночество</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="footer__col-title">Услуги</h4>
+      <ul class="footer__links" role="list">
+        <li><a href="#how">Индивидуальная терапия</a></li>
+        <li><a href="#how">Парная терапия</a></li>
+        <li><a href="#how">Семейная терапия</a></li>
+        <li><a href="#pricing">Стоимость</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="footer__col-title">Контакты</h4>
+      <ul class="footer__links" role="list">
+        <li><a href="mailto:hello@garmonia-psy.ru" target="_blank" rel="noopener noreferrer">hello@garmonia-psy.ru</a></li>
+        <li><a href="tel:+78001234567">8-800-123-45-67</a></li>
+        <li>Экстренная помощь:</li>
+        <li><a href="tel:88002000122">8-800-2000-122</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <span>© 2026 Гармония. Все права защищены.</span>
+    <span>Политика конфиденциальности · Пользовательское соглашение</span>
+  </div>
+</footer>
+
+<script>
+// Theme toggle
+(function(){
+  const t=document.querySelector('[data-theme-toggle]'),r=document.documentElement;
+  let d=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';
+  r.setAttribute('data-theme',d);
+  t&&t.addEventListener('click',()=>{
+    d=d==='dark'?'light':'dark';
+    r.setAttribute('data-theme',d);
+    t.setAttribute('aria-label','Переключить на '+(d==='dark'?'светлую':'тёмную')+' тему');
+    t.innerHTML=d==='dark'?'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>':'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+  });
+})();
+
+// Header scroll shadow
+(function(){
+  const h=document.querySelector('.header');
+  let ticking=false;
+  window.addEventListener('scroll',()=>{
+    if(!ticking){requestAnimationFrame(()=>{h.classList.toggle('header--scrolled',window.scrollY>10);ticking=false;});ticking=true;}
+  });
+})();
+
+// FAQ accordion
+document.querySelectorAll('.faq__question').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const item=btn.parentElement;
+    const isOpen=item.classList.contains('open');
+    document.querySelectorAll('.faq__item.open').forEach(i=>i.classList.remove('open'));
+    document.querySelectorAll('.faq__question').forEach(b=>b.setAttribute('aria-expanded','false'));
+    if(!isOpen){item.classList.add('open');btn.setAttribute('aria-expanded','true');}
+  });
+});
+
+// Smooth scroll for all anchor links
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',e=>{
+    const target=document.querySelector(a.getAttribute('href'));
+    if(target){e.preventDefault();target.scrollIntoView({behavior:'smooth'});}
+  });
+});
+</script>
+</body>
+</html>
