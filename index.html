@@ -897,7 +897,6 @@ a:hover { color: var(--color-primary-hover); }
     </div>
   </div>
 </section>
-
 <section class="video-section" style="padding: clamp(var(--space-12), 8vw, var(--space-24)) var(--space-4); background: var(--color-surface);">
   <div class="container container--narrow">
     <div class="section-header fade-in">
@@ -906,7 +905,7 @@ a:hover { color: var(--color-primary-hover); }
       <p class="section-header__desc">Кратко о формате работы, подходе и темах, с которыми мы помогаем клиентам.</p>
     </div>
 
-    <video controls playsinline style="width: 100%; border-radius: var(--radius-xl); box-shadow: var(--shadow-lg);">
+    <video controls playsinline preload="metadata" style="width: 100%; border-radius: var(--radius-xl); box-shadow: var(--shadow-lg);">
       <source src="./video.mp4" type="video/mp4">
       Ваш браузер не поддерживает воспроизведение видео.
     </video>
